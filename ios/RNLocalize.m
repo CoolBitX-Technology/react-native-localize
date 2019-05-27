@@ -85,7 +85,7 @@ static NSDictionary *getNumberFormatSettings(NSLocale *locale) {
 }
 
 static NSDictionary *getExported() {
-  NSLocale *currentLocale = [NSLocale autoupdatingCurrentLocale];
+  NSLocale *currentLocale = [[NSLocale alloc] initWithLocaleIdentifier:[NSLocale preferredLanguages].firstObject];
   NSString *currentCountryCode = getCountryCode(currentLocale, @"US");
 
   NSMutableArray<NSDictionary *> *locales = [NSMutableArray array];
