@@ -103,13 +103,13 @@ export function findBestAvailableLanguage(
       return { languageTag, isRTL };
     }
     
-  if (Platform.OS == “android”) {
+  if (Platform.OS == "android") {
      try {
        if (languageTags.includes(languageTag.substring(0, 2))) {
          return { languageTag: languageTag.substring(0, 2), isRTL };
        }
      } catch (error) {
-       console.log(“findBestAvailableLanguage error”, JSON.stringify(error));
+       console.log("findBestAvailableLanguage error", JSON.stringify(error));
      }
      return { languageTag: languageTags[0], isRTL };
    }
